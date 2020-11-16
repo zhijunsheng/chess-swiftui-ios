@@ -12,6 +12,38 @@ struct ChessGame {
     
     init() {
         pieces = []
+        
+        for i in 0..<2 {
+            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 0), rank: .rook, player: .white))
+            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 7), rank: .rook, player: .black))
+            
+            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 0), rank: .knight, player: .white))
+            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 7), rank: .knight, player: .black))
+            
+            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 0), rank: .bishop, player: .white))
+            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 7), rank: .bishop, player: .black))
+        }
+        
+        for i in 0..<8 {
+            pieces.insert(Piece(loc: Location(col: i, row: 1), rank: .pawn, player: .white))
+            pieces.insert(Piece(loc: Location(col: i, row: 6), rank: .pawn, player: .black))
+        }
+        
+        pieces.insert(Piece(loc: Location(col: 3, row: 0), rank: .queen, player: .white))
+        pieces.insert(Piece(loc: Location(col: 3, row: 7), rank: .queen, player: .black))
+        
+        pieces.insert(Piece(loc: Location(col: 4, row: 0), rank: .king, player: .white))
+        pieces.insert(Piece(loc: Location(col: 4, row: 7), rank: .king, player: .black))
+        
+    }
+    
+    private func pieceAt(loc: Location) -> Piece? {
+        for piece in pieces {
+            if piece.loc == loc {
+                return piece
+            }
+        }
+        return nil
     }
     
     enum Player {
@@ -64,8 +96,25 @@ extension ChessGame: CustomStringConvertible {
         var desc = ""
         for i in 0..<8 {
             desc += "\(7 - i)"
-            for _ in 0..<8 {
-                desc += " ."
+            for col in 0..<8 {
+                if let piece = pieceAt(loc: Location(col: col, row: 7 - i)) {
+                    switch piece.rank {
+                    case .king:
+                        desc += piece.player == .white ? " k" : " K"
+                    case .queen:
+                        desc += piece.player == .white ? " q" : " Q"
+                    case .bishop:
+                        desc += piece.player == .white ? " b" : " B"
+                    case .rook:
+                        desc += piece.player == .white ? " r" : " R"
+                    case .knight:
+                        desc += piece.player == .white ? " n" : " N"
+                    case .pawn:
+                        desc += piece.player == .white ? " p" : " P"
+                    }
+                } else {
+                    desc += " ."
+                }
             }
             desc += "\n"
         }
