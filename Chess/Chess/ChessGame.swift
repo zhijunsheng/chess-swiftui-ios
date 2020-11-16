@@ -7,37 +7,37 @@
 
 import Foundation
 
-struct ChessGame {
+struct ChessGame<PieceContent> {
     private var pieces: Set<Piece>
     
-    init() {
+    init(pieceContentFactory: (Rank, Player) -> PieceContent) {
         pieces = []
         
         for i in 0..<2 {
-            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 0), rank: .rook, player: .white))
-            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 7), rank: .rook, player: .black))
+            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 0), rank: .rook, player: .white, content: pieceContentFactory(.rook, .white)))
+            pieces.insert(Piece(loc: Location(col: 0 + 7 * i, row: 7), rank: .rook, player: .black, content: pieceContentFactory(.rook, .black)))
             
-            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 0), rank: .knight, player: .white))
-            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 7), rank: .knight, player: .black))
+            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 0), rank: .knight, player: .white, content: pieceContentFactory(.knight, .white)))
+            pieces.insert(Piece(loc: Location(col: 1 + 5 * i, row: 7), rank: .knight, player: .black, content: pieceContentFactory(.knight, .black)))
             
-            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 0), rank: .bishop, player: .white))
-            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 7), rank: .bishop, player: .black))
+            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 0), rank: .bishop, player: .white, content: pieceContentFactory(.bishop, .white)))
+            pieces.insert(Piece(loc: Location(col: 2 + 3 * i, row: 7), rank: .bishop, player: .black, content: pieceContentFactory(.bishop, .black)))
         }
         
         for i in 0..<8 {
-            pieces.insert(Piece(loc: Location(col: i, row: 1), rank: .pawn, player: .white))
-            pieces.insert(Piece(loc: Location(col: i, row: 6), rank: .pawn, player: .black))
+            pieces.insert(Piece(loc: Location(col: i, row: 1), rank: .pawn, player: .white, content: pieceContentFactory(.pawn, .white)))
+            pieces.insert(Piece(loc: Location(col: i, row: 6), rank: .pawn, player: .black, content: pieceContentFactory(.pawn, .black)))
         }
         
-        pieces.insert(Piece(loc: Location(col: 3, row: 0), rank: .queen, player: .white))
-        pieces.insert(Piece(loc: Location(col: 3, row: 7), rank: .queen, player: .black))
+        pieces.insert(Piece(loc: Location(col: 3, row: 0), rank: .queen, player: .white, content: pieceContentFactory(.queen, .white)))
+        pieces.insert(Piece(loc: Location(col: 3, row: 7), rank: .queen, player: .black, content: pieceContentFactory(.queen, .black)))
         
-        pieces.insert(Piece(loc: Location(col: 4, row: 0), rank: .king, player: .white))
-        pieces.insert(Piece(loc: Location(col: 4, row: 7), rank: .king, player: .black))
+        pieces.insert(Piece(loc: Location(col: 4, row: 0), rank: .king, player: .white, content: pieceContentFactory(.king, .white)))
+        pieces.insert(Piece(loc: Location(col: 4, row: 7), rank: .king, player: .black, content: pieceContentFactory(.king, .black)))
         
     }
     
-    private func pieceAt(loc: Location) -> Piece? {
+    func pieceAt(loc: Location) -> Piece? {
         for piece in pieces {
             if piece.loc == loc {
                 return piece
@@ -78,6 +78,7 @@ struct ChessGame {
         var loc: Location
         var rank: Rank
         var player: Player
+        var content: PieceContent
         
         static func ==(lhs: Piece, rhs: Piece) -> Bool {
             return lhs.loc == rhs.loc && lhs.player == rhs.player
