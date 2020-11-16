@@ -13,6 +13,7 @@
 		078585832562F75D00EAFED0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078585822562F75D00EAFED0 /* Preview Assets.xcassets */; };
 		0785858E2562F75D00EAFED0 /* ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785858D2562F75D00EAFED0 /* ChessTests.swift */; };
 		078585992562F75D00EAFED0 /* ChessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078585982562F75D00EAFED0 /* ChessUITests.swift */; };
+		078585AA2562FEDD00EAFED0 /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078585A92562FEDD00EAFED0 /* ChessGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		078585942562F75D00EAFED0 /* ChessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078585982562F75D00EAFED0 /* ChessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessUITests.swift; sourceTree = "<group>"; };
 		0785859A2562F75D00EAFED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078585A92562FEDD00EAFED0 /* ChessGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0785857B2562F75C00EAFED0 /* ChessApp.swift */,
+				078585A92562FEDD00EAFED0 /* ChessGame.swift */,
 				0785857D2562F75C00EAFED0 /* ContentView.swift */,
 				0785857F2562F75D00EAFED0 /* Assets.xcassets */,
 				078585842562F75D00EAFED0 /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078585AA2562FEDD00EAFED0 /* ChessGame.swift in Sources */,
 				0785857E2562F75C00EAFED0 /* ContentView.swift in Sources */,
 				0785857C2562F75C00EAFED0 /* ChessApp.swift in Sources */,
 			);
