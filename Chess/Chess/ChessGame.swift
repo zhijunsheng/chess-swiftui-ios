@@ -8,7 +8,11 @@
 import Foundation
 
 struct ChessGame {
-    private var pieces: Set<Piece> = []
+    private var pieces: Set<Piece>
+    
+    init() {
+        pieces = []
+    }
     
     enum Player {
         case white
@@ -38,7 +42,7 @@ struct ChessGame {
         }
     }
     
-    struct Piece: Equatable, Hashable {
+    struct Piece: Hashable {
         var loc: Location
         var rank: Rank
         var player: Player
@@ -58,7 +62,15 @@ struct ChessGame {
 extension ChessGame: CustomStringConvertible {
     var description: String {
         var desc = ""
-        desc += " ."
+        for i in 0..<8 {
+            desc += "\(7 - i)"
+            for _ in 0..<8 {
+                desc += " ."
+            }
+            desc += "\n"
+        }
+        desc += "  0 1 2 3 4 5 6 7"
+        
         return desc
     }
 }
