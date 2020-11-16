@@ -54,3 +54,11 @@ struct ChessGame {
         }
     }
 }
+
+extension ChessGame: CustomStringConvertible {
+    var description: String {
+        var desc = ""
+        desc += " ."
+        return desc
+    }
+}
