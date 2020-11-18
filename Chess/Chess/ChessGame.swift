@@ -49,6 +49,10 @@ struct ChessGame<PieceContent> {
     enum Player {
         case white
         case black
+        
+        var isWhite: Bool {
+            self == .white
+        }
     }
     
     enum Rank {
@@ -99,19 +103,20 @@ extension ChessGame: CustomStringConvertible {
             desc += "\(7 - i)"
             for col in 0..<8 {
                 if let piece = pieceAt(loc: Location(col: col, row: 7 - i)) {
+                    desc += " "
                     switch piece.rank {
                     case .king:
-                        desc += piece.player == .white ? " k" : " K"
+                        desc += piece.player == .white ? "k" : "K"
                     case .queen:
-                        desc += piece.player == .white ? " q" : " Q"
+                        desc += piece.player == .white ? "q" : "Q"
                     case .bishop:
-                        desc += piece.player == .white ? " b" : " B"
+                        desc += piece.player == .white ? "b" : "B"
                     case .rook:
-                        desc += piece.player == .white ? " r" : " R"
+                        desc += piece.player == .white ? "r" : "R"
                     case .knight:
-                        desc += piece.player == .white ? " n" : " N"
+                        desc += piece.player == .white ? "n" : "N"
                     case .pawn:
-                        desc += piece.player == .white ? " p" : " P"
+                        desc += piece.player == .white ? "p" : "P"
                     }
                 } else {
                     desc += " ."
