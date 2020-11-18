@@ -9,8 +9,20 @@ import SwiftUI
 
 struct EmojiChessGameView: View {
     var body: some View {
-        Text("♛")
-            .font(Font.system(size: 128))
+        VStack {
+            ForEach (0..<8) { _ in
+                HStack {
+                    ForEach (0..<8) { _ in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8).stroke()
+                            Text("♛")
+                                .font(.title)
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
     }
 }
 
