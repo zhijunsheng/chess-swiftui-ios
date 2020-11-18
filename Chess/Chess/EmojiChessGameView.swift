@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiChessGameView: View {
     var body: some View {
-        Image("Queen-black")
+        Text("♛")
+            .font(Font.system(size: 128))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        EmojiChessGameView()
     }
 }

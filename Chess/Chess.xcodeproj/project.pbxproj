@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0785857C2562F75C00EAFED0 /* ChessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785857B2562F75C00EAFED0 /* ChessApp.swift */; };
-		0785857E2562F75C00EAFED0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785857D2562F75C00EAFED0 /* ContentView.swift */; };
+		0785857E2562F75C00EAFED0 /* EmojiChessGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785857D2562F75C00EAFED0 /* EmojiChessGameView.swift */; };
 		078585802562F75D00EAFED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0785857F2562F75D00EAFED0 /* Assets.xcassets */; };
 		078585832562F75D00EAFED0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078585822562F75D00EAFED0 /* Preview Assets.xcassets */; };
 		078585AA2562FEDD00EAFED0 /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078585A92562FEDD00EAFED0 /* ChessGame.swift */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		078585782562F75C00EAFED0 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0785857B2562F75C00EAFED0 /* ChessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessApp.swift; sourceTree = "<group>"; };
-		0785857D2562F75C00EAFED0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0785857D2562F75C00EAFED0 /* EmojiChessGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiChessGameView.swift; sourceTree = "<group>"; };
 		0785857F2562F75D00EAFED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		078585822562F75D00EAFED0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		078585842562F75D00EAFED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			children = (
 				0785857B2562F75C00EAFED0 /* ChessApp.swift */,
 				078585A92562FEDD00EAFED0 /* ChessGame.swift */,
-				0785857D2562F75C00EAFED0 /* ContentView.swift */,
+				0785857D2562F75C00EAFED0 /* EmojiChessGameView.swift */,
 				0785857F2562F75D00EAFED0 /* Assets.xcassets */,
 				078585842562F75D00EAFED0 /* Info.plist */,
 				078585812562F75D00EAFED0 /* Preview Content */,
@@ -205,7 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078585AA2562FEDD00EAFED0 /* ChessGame.swift in Sources */,
-				0785857E2562F75C00EAFED0 /* ContentView.swift in Sources */,
+				0785857E2562F75C00EAFED0 /* EmojiChessGameView.swift in Sources */,
 				0785857C2562F75C00EAFED0 /* ChessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
