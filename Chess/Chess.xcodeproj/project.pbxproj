@@ -13,6 +13,7 @@
 		078585832562F75D00EAFED0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078585822562F75D00EAFED0 /* Preview Assets.xcassets */; };
 		078585AA2562FEDD00EAFED0 /* Chess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078585A92562FEDD00EAFED0 /* Chess.swift */; };
 		078585B5256329BD00EAFED0 /* ChessGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078585B4256329BD00EAFED0 /* ChessGameTests.swift */; };
+		07F9C2482571B181000E8526 /* ImageChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9C2472571B181000E8526 /* ImageChessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0785858F2562F75D00EAFED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078585A92562FEDD00EAFED0 /* Chess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chess.swift; sourceTree = "<group>"; };
 		078585B4256329BD00EAFED0 /* ChessGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameTests.swift; sourceTree = "<group>"; };
+		07F9C2472571B181000E8526 /* ImageChessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				0785857B2562F75C00EAFED0 /* ChessApp.swift */,
 				078585A92562FEDD00EAFED0 /* Chess.swift */,
+				07F9C2472571B181000E8526 /* ImageChessView.swift */,
 				0785857D2562F75C00EAFED0 /* EmojiChessView.swift */,
 				0785857F2562F75D00EAFED0 /* Assets.xcassets */,
 				078585842562F75D00EAFED0 /* Info.plist */,
@@ -207,6 +210,7 @@
 				078585AA2562FEDD00EAFED0 /* Chess.swift in Sources */,
 				0785857E2562F75C00EAFED0 /* EmojiChessView.swift in Sources */,
 				0785857C2562F75C00EAFED0 /* ChessApp.swift in Sources */,
+				07F9C2482571B181000E8526 /* ImageChessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
