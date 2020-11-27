@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChessGame<PieceContent> {
+struct Chess<PieceContent> {
     private var pieces: Set<Piece>
     
     init(pieceContentFactory: (Rank, Player) -> PieceContent) {
@@ -96,7 +96,7 @@ struct ChessGame<PieceContent> {
     }
 }
 
-extension ChessGame: CustomStringConvertible {
+extension Chess: CustomStringConvertible {
     var description: String {
         var desc = ""
         for i in 0..<8 {

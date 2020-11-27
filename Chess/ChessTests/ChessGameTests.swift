@@ -26,7 +26,7 @@ class ChessGameTests: XCTestCase {
         for i in 0..<8 {
             desc += "\(7 - i)"
             for col in 0..<8 {
-                if let piece = emojiChessGame.pieceAt(loc: ChessGame<String>.Location(col: col, row: 7 - i)) {
+                if let piece = emojiChessGame.pieceAt(loc: Chess<String>.Location(col: col, row: 7 - i)) {
                     desc += "\(piece.content)"
                 } else {
                     desc += " ."
@@ -39,8 +39,8 @@ class ChessGameTests: XCTestCase {
         print(desc)
     }
     
-    private static func createEmojiChessGame() -> ChessGame<String> {
-        return ChessGame { (rank: ChessGame<String>.Rank, player: ChessGame<String>.Player) -> String in
+    private static func createEmojiChessGame() -> Chess<String> {
+        return Chess { (rank: Chess<String>.Rank, player: Chess<String>.Player) -> String in
             switch rank {
             case .king:
                 return player.isWhite ? " ♔" : " ♚"
