@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ImageChessView: View {
+    @State private var movingPiecePosition: CGPoint = CGPoint(x: 150, y: 250)
+    
     var body: some View {
         ZStack {
-            
             ForEach (0..<4) { row in
                 ForEach (0..<4) { col in
                     Square(col: 2 * col + 0, row: 2 * row + 0).fill(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                     Square(col: 2 * col + 1, row: 2 * row + 1).fill(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                    Square(col: 2 * col + 1, row: 2 * row + 0).fill(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
-                    Square(col: 2 * col + 0, row: 2 * row + 1).fill(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+                    Square(col: 2 * col + 1, row: 2 * row + 0).fill(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                    Square(col: 2 * col + 0, row: 2 * row + 1).fill(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                 }
             }
+            
+            Image("Queen-black")
+                .position(movingPiecePosition)
+                .gesture(DragGesture().onChanged() { dragGestureValue in
+                    movingPiecePosition = dragGestureValue.location
+                })
         }
     }
 }
