@@ -27,22 +27,21 @@ struct ImageChessView: View {
                     movingPiecePosition = dragGestureValue.location
                 })
         }
+        .aspectRatio(contentMode: .fit)
+        .padding()
     }
 }
 
 struct Square: Shape {
     func path(in rect: CGRect) -> Path {
+        let cellSide = min(rect.width, rect.height) / 8
         var path = Path()
-        path.addRect(CGRect(x: originX + CGFloat(col) * cellSide, y: originY + CGFloat(row) * cellSide, width: cellSide, height: cellSide))
+        path.addRect(CGRect(x: 0 + CGFloat(col) * cellSide, y: 0 + CGFloat(row) * cellSide, width: cellSide, height: cellSide))
         return path
     }
     
     var col: Int
     var row: Int
-    
-    let originX: CGFloat = 29
-    let originY: CGFloat = 70
-    let cellSide: CGFloat = 43
 }
 
 struct ImageChessView_Previews: PreviewProvider {
